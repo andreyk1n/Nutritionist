@@ -32,7 +32,6 @@ body {
     color: $fontColor;
     background-color: $bgColor;
     overflow-x: hidden;
-    line-height: $lineHeight;
 }
 
 .wrapper {
@@ -105,27 +104,39 @@ a:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $buttonBgColor;
     transition-duration: $transitionDuration;
-    color: $buttonFontColor;
-    padding: $buttonPaddings;
+    padding: 12px 16px;
     border-radius: $buttonBorderRadius;
     cursor: pointer;
     border: 0;
     outline: 0;
+
+    &--green {
+        background-color: #CBEA7B;
+        border: 2px solid #CBEA7B;
+        color: #333;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        /* 21/14 */
+    }
 }
 
 .button:hover {
-    background-color: $buttonHover;
+    border: 2px solid #CBEA7B;
+    background-color: transparent;
 }
 
 .button:active {
-    background-color: $buttonActive;
+    border: 2px solid #CBEA7B;
+    background-color: transparent;
 }
 
 // Загальні стилі для списків
-ol, ul {
+ol,
+ul {
     padding-left: 20px;
+
     li:not(:last-child) {
         padding-bottom: 15px;
     }
@@ -135,3 +146,6 @@ h1 {
     @include adaptiveValue('font-size', 60px, 24px);
 }
 
+.no-scroll {
+    overflow: hidden;
+}

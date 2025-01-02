@@ -7,29 +7,113 @@
     top: 0;
     left: 0;
     transition: top $transitionDuration;
+    background-color: #1A3129;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__top {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 14px;
+
+        @media (max-width: 768px) {
+            padding: 5px;
+        }
+
+        &-container {
+            background-color: #234338;
+            border: 1px solid #2C5446;
+            border-radius: 6px;
+            height: 45px;
+            padding: 0 5px!important;
+            @media (max-width: 992px) {
+                &>svg {
+                    display: none;
+                }
+
+                justify-content: center;
+            }
+        }
+
+        &-link {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            transition-duration: $transitionDuration;
+            a {
+                color: #fff;
+                text-decoration: none;
+                padding-right: 10px;
+
+                @media (max-width: 768px) {
+                    font-size: 14px;
+                }
+            }
+
+            &:hover a {
+                color: #fff;
+            }
+
+            &:hover {
+                gap: 15px;
+            }
+        }
+    }
+
+    &__link {
+        font-weight: 600;
+        color: #fff;
+        font-size: 16px;
+
+        &.currentPage {
+            color: $linkHoverColor;
+        }
+
+        @media (max-width: 992px) {
+            font-size: 26px;
+        }
+     }
+
+    &__bottom {
+        background-color: #1A3129;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+        border-top: 1px solid #234338;
+    }
 
     &__nav {
         width: 100%;
         max-width: 715px;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
         gap: 15px;
+        z-index: -1;
 
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
+            margin-top: 100px;
             position: absolute;
-            right: -100%; 
+            right: -100%;
             top: 0;
             flex-direction: column;
             gap: 25px;
             align-items: center;
             justify-content: center;
             width: 100%;
-            min-height: 100vh; 
-            background-color: #ffffff;
+            min-height: 100vh;
+            background-color: #1A3129;
             transition-duration: $transitionDuration;
+            overflow-y: auto;
         }
-    
+
         &.active {
             right: 0; // Коли активне, меню буде видно
         }
@@ -39,56 +123,69 @@
         display: none;
     }
 
-    @media (max-width:768px) {
+    @media (max-width:992px) {
         &__burger {
-            min-width: 20px;
-            width: 40px;
-            height: 30px;
+            min-width: 30px;
+            width: 30px;
+            height: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             position: relative;
             z-index: 11;
-        
+
             span {
                 display: block;
                 width: 100%;
                 height: 2px;
-                background-color: $buttonBgColor;
+                background-color: #CBEA7B;
                 position: relative;
                 transition-duration: $transitionDuration;
-        
-                &::before,
-                &::after {
+
+                &::before {
                     content: "";
                     position: absolute;
                     width: 100%;
                     height: 2px;
-                    background-color: $buttonBgColor;
+                    background-color: #CBEA7B;
                     transition-duration: $transitionDuration;
+                    border-radius: 4px;
                 }
-        
-                &::before {
-                    top: -10px; 
-                }
-        
+
                 &::after {
-                    top: 10px; 
+                    content: "";
+                    position: absolute;
+                    width: 50%;
+                    height: 2px;
+                    background-color: #CBEA7B;
+                    transition-duration: $transitionDuration;
+                    right: 0;
+                    border-radius: 4px;
+
+                }
+
+                &::before {
+                    top: -10px;
+                }
+
+                &::after {
+                    top: 10px;
                 }
             }
-    
+
             &.active span {
-                background-color: transparent; 
-        
+                background-color: transparent;
+
                 &::before {
                     top: 0;
-                    transform: rotate(45deg); 
+                    transform: rotate(45deg);
                 }
-        
+
                 &::after {
+                    width: 100%;
                     top: 0;
-                    transform: rotate(-45deg); 
+                    transform: rotate(-45deg);
                 }
             }
         }
