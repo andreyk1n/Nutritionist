@@ -32,6 +32,7 @@ body {
     color: $fontColor;
     background-color: $bgColor;
     overflow-x: hidden;
+    line-height: $lineHeight;
 }
 
 .wrapper {
@@ -49,6 +50,39 @@ body {
     margin: 0 auto;
     padding: 0 15px
 }
+
+@font-face {
+    font-family: 'Urbanist';
+    src: url('/fonts/Urbanist-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Urbanist';
+    src: url('/fonts/Urbanist-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Urbanist';
+    src: url('/fonts/Urbanist-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Urbanist';
+    src: url('/fonts/Urbanist-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 
 // Застосування стилів для посилання: колір, час анімації, активний стан.
 a {

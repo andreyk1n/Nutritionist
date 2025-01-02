@@ -1,11 +1,12 @@
 // ШРИФТИ
-$fontFamily: Arial, Helvetica, sans-serif;
+$fontFamily: "Urbanist", sans-serif;
 $fontSize: 18px;
+$lineHeight: calc(#{$fontSize} / 27);
 
 // Кольори
 $bgColor: white;
 $transitionDuration: .8s;
-$fontColor: rgb(73, 78, 124);
+$fontColor: #333;
 $linkColor: red;
 $linkHoverColor: rgba(255, 0, 0, 0.578);
 $activeColor: green;
