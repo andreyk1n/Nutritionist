@@ -82,3 +82,13 @@ import {currentPage} from './functions/currentPage.js'
 // ---------------------------------------------------------------------------------------------------------------
 currentPage();
 // ---------------------------------------------------------------------------------------------------------------
+
+// Скрол до верху
+
+document.querySelector('.footer__anchor').addEventListener('click', function (e) {
+    e.preventDefault(); // Запобігає переходу за посиланням
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Плавний скрол
+    });
+});
