@@ -3,6 +3,7 @@
 @use 'header';
 @use 'footer';
 @use 'hero';
+@use 'features';
 
 
 // Підключення стилів аккордіону
@@ -154,9 +155,6 @@ ul {
     }
 }
 
-h1 {
-    @include adaptiveValue('font-size', 60px, 24px);
-}
 
 .no-scroll {
     overflow: hidden;
@@ -169,8 +167,14 @@ h1 {
     align-items: center;
 }
 
-.title {
+h1.title {
     color: #1a3129;
     font-size: clamp(38px, 5vw, 58px);
+    font-weight: 700;
+}
+
+h2.title {
+    color: #1a3129;
+    font-size: clamp(28px, 5vw, 48px);
     font-weight: 700;
 }

@@ -1,0 +1,65 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.features {
+    @include adaptiveValue('margin-top', 150px, 30px);
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__title {
+        margin-bottom: 5px;
+    }
+
+    &__cards {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #F6FBE9;
+        border-radius: 12px;
+        padding: 40px;
+
+        @media (max-width: 992px) {
+            padding: 25px;
+        }
+
+        &-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 150%; /* 36px/24 */
+
+            @media (max-width: 768px) {
+                font-size: 22px;
+            }
+        }
+    }
+
+    &__icon {
+        width: 68px;
+        height: 68px;
+        min-width: 68px;
+        border-radius: 8px;
+        background-color: #CBEA7B;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
