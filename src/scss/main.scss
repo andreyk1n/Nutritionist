@@ -2,6 +2,7 @@
 @use 'mixins' as *;
 @use 'header';
 @use 'footer';
+@use 'hero';
 
 
 // Підключення стилів аккордіону
@@ -121,6 +122,16 @@ a:active {
         line-height: 150%;
         /* 21/14 */
     }
+
+    &--lightgreen {
+        background-color: #F6FBE9;
+        border: 2px solid #E5F5BD;
+        color: #333;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        /* 21/14 */
+    }
 }
 
 .button:hover {
@@ -149,4 +160,17 @@ h1 {
 
 .no-scroll {
     overflow: hidden;
+}
+
+.section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: #1a3129;
+    font-size: clamp(38px, 5vw, 58px);
+    font-weight: 700;
 }
