@@ -1,0 +1,119 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+
+.slider {
+    @include adaptiveValue('margin-top', 150px, 30px);
+
+    position: relative;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        h2 {
+            text-align: center;
+        }
+
+        &>p {
+            text-align: center;
+        }
+    }
+
+    .swiper-container {
+        margin-top: 50px;
+        overflow: hidden;
+    }
+
+    &__slide {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #EEF8D3;
+        border-radius: 12px;
+
+        font-size: 18px;
+        font-style: normal;
+        font-family: "Urbanist",sans-serif;
+        font-weight: 500;
+        line-height: 150%; /* 27/18 */
+
+        &>svg {
+            margin: 40px;
+
+            @media (max-width: 1200px) {
+                margin: 20px;
+            }
+        }
+        &>p {
+            margin-bottom: 30px;
+            padding: 40px;
+            @media (max-width: 1200px) {
+                padding: 20px;
+            }
+        }
+
+        &-bottom {
+            background-color: #F6FBE9;
+            padding: 30px 40px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+
+            color: #1a3129;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 150%; /* 27/18 */
+
+            @media (max-width: 1200px) {
+                padding: 20px;
+            }
+        }
+    }
+
+    &__pagination.swiper-pagination {
+        max-width: fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .swiper-pagination-bullet {
+            background-color: #bdcb99;
+            width: 10px;
+            min-width: 10px;
+            height: 10px;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background-color: #356554;
+        }
+
+
+    }
+
+    &__button.swiper-button-next, &__button.swiper-button-prev {
+        width: 58px;
+        height: 58px;
+        min-width: 58px;
+        background-color: #F6FBE9;
+        border-radius: 8px;
+        border: 1px solid #EEF8D3;
+        &::after {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        transition-duration: $transitionDuration;
+        &:hover {
+            opacity: .5;
+        }
+    }
+    
+
+    &__actions {
+        margin: 50px auto 0 auto;
+        width: 100%;
+        max-width: 250px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

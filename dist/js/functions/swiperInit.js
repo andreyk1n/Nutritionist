@@ -9,23 +9,23 @@ const swiper = new Swiper('.swiper-container', {
   
     // Включає або відключає нескінченний цикл прокрутки
     // Можливі значення: true, false
-    // loop: false,
+    loop: false,
   
     // Кількість слайдів, які відображаються одночасно
     // Можливі значення: число або 'auto'
-    // slidesPerView: 1,
+    slidesPerView: 3,
   
     // Кількість слайдів, які прокручуються при одній взаємодії
     // Можливі значення: число або 'auto'
-    // slidesPerGroup: 1,
+    slidesPerGroup: 1,
   
     // Простір між слайдами в пікселях
     // Можливі значення: число
-    // spaceBetween: 0,
+    spaceBetween: 20,
   
     // Швидкість переходу між слайдами в мілісекундах
     // Можливі значення: число
-    // speed: 300,
+    speed: 500,
   
     // Включає або відключає можливість перетягування слайдів мишею
     // Можливі значення: true, false
@@ -109,25 +109,25 @@ const swiper = new Swiper('.swiper-container', {
     /* ==================== Пагінація ==================== */
   
     // Налаштування пагінації (індикатори поточного слайда)
-    // pagination: {
-    //   el: '.swiper-pagination', // CSS-селектор елемента пагінації
-    //   type: 'bullets',          // Тип пагінації: 'bullets', 'fraction', 'progressbar', 'custom'
-    //   clickable: true,          // Дозволяє клікабельність індикаторів
-    //   dynamicBullets: false,    // Динамічний розмір кульок
-    //   renderBullet: function (index, className) {
-    //     return '<span class="' + className + '">' + (index + 1) + '</span>';
-    //   },
-    // },
+    pagination: {
+      el: '.swiper-pagination', // CSS-селектор елемента пагінації
+      type: 'bullets',          // Тип пагінації: 'bullets', 'fraction', 'progressbar', 'custom'
+      clickable: true,          // Дозволяє клікабельність індикаторів
+      dynamicBullets: false,    // Динамічний розмір кульок
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '"></span>';
+      },
+    },
   
     /* ==================== Навігація ==================== */
   
     // Налаштування кнопок навігації
-    // navigation: {
-    //   nextEl: '.swiper-button-next', // CSS-селектор кнопки "наступний слайд"
-    //   prevEl: '.swiper-button-prev', // CSS-селектор кнопки "попередній слайд"
-    //   disabledClass: 'swiper-button-disabled', // Клас для неактивних кнопок
-    //   hiddenClass: 'swiper-button-hidden',     // Клас для прихованих кнопок
-    // },
+    navigation: {
+      nextEl: '.swiper-button-next', // CSS-селектор кнопки "наступний слайд"
+      prevEl: '.swiper-button-prev', // CSS-селектор кнопки "попередній слайд"
+      disabledClass: 'swiper-button-disabled', // Клас для неактивних кнопок
+      hiddenClass: 'swiper-button-hidden',     // Клас для прихованих кнопок
+    },
   
     /* ==================== Скроллбар ==================== */
   
@@ -142,20 +142,17 @@ const swiper = new Swiper('.swiper-container', {
     /* ==================== Адаптивність (Breakpoints) ==================== */
   
     // Налаштування для різних розмірів екранів
-    // breakpoints: {
-    //   320: {
-    //     slidesPerView: 1,
-    //     spaceBetween: 10,
-    //   },
-    //   640: {
-    //     slidesPerView: 2,
-    //     spaceBetween: 20,
-    //   },
-    //   1024: {
-    //     slidesPerView: 3,
-    //     spaceBetween: 30,
-    //   },
-    // },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
   
     /* ==================== Lazy Loading ==================== */
   
