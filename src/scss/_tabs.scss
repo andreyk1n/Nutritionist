@@ -1,35 +1,49 @@
+@use 'variables' as *;
+
 .tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  &__buttons {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 500px;
-  
-    &__buttons {
-      display: flex;
-    }
-  
-    &__button {
-      padding: 8px 16px;
-      border: 1px solid #333;
-      background-color: transparent;
-      cursor: pointer;
-      margin-right: 4px;
-  
-      &--active {
-        background-color: #333;
-        color: #fff;
+    padding: 10px;
+    border: 1px solid #DCF1A7;
+    border-radius: 8px;
+    gap: 5px;
+  }
+
+  &__button {
+    padding: 10px 24px;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 0;
+    outline: 0;
+    border: 2px solid transparent;
+    transition-duration: $transitionDuration;
+
+    &--active {
+      background-color: #234338;
+      border: 2px solid #234338;  
+      color: #fff;
+      &:hover {
+        opacity: .5;
       }
-    }
-  
-    &__content {
-      display: none;
-      padding: 16px;
-      border: 1px solid #ddd;
-      margin-top: 8px;
-      width: 100%;
-  
-      &--active {
-        display: block;
-      }
+    }   
+
+    &:hover {
+      border: 2px solid #234338;
     }
   }
+
+  &__content {
+    display: none;
+    width: 100%;
+
+    &--active {
+      display: block;
+    }
+  }
+}

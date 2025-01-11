@@ -1,0 +1,93 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.pricing {
+    @include adaptiveValue('margin-top', 150px, 30px);
+    @include adaptiveValue('margin-bottom', 60px, 30px);
+
+    &__container {
+        &>p {
+            text-align: center;
+            margin-bottom: 50px;
+            max-width: 996px;
+        }
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__label {
+        margin-top: 14px;
+        margin-bottom: 50px;
+        color: #4C4C4D;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+
+        @media (max-width: 1200px) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto auto; 
+            .pricing__card:last-child {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 800px) {
+            grid-template-columns: auto;
+            .pricing__card:last-child {
+                grid-column: span 1;
+            }
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        background-color: #F6FBE9;
+        padding: 34px;
+        border-radius: 12px;
+
+        &-title {
+            color: #262626;
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 150%;
+            /* 45/30 */
+        }
+
+        &-label {
+            color: #4c4c4d;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 150%;
+            /* 27/18 */
+        }
+
+        &-text {
+            margin-top: 40px;
+        }
+
+        &-price {
+            color: #333;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            font-weight: 500;
+
+            span {
+                color: #2c5446;
+                font-size: 50px;
+                font-weight: 700;
+                line-height: 88%;
+                /* 44/50 */
+            }
+        }
+    }
+}
+
+.button.pricing__button {
+    width: 100%;
+}

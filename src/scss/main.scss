@@ -6,6 +6,7 @@
 @use 'features';
 @use 'our-blogs';
 @use 'slider';
+@use 'pricing';
 
 
 
@@ -13,7 +14,7 @@
 // @use 'accordion';
 
 // Підключення стилів табів
-// @use 'tabs';
+@use 'tabs';
 
 // Підключення стилізації модальних вікон та поп-апів
 // @use 'modal';
