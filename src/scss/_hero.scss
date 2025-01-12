@@ -1,3 +1,5 @@
+@use 'variables' as *;
+@use 'mixins' as *;
 .hero {
     margin-top: 100px;
 
@@ -105,5 +107,15 @@
         margin: 50px 0;
         display: flex;
         gap: 20px;
+    }
+
+    &-about {
+        @include adaptiveValue('margin-top', 200px, 160px);
+       
+        &__img {
+            width: 100%;
+            height: 100%;
+        }
+
     }
 }
