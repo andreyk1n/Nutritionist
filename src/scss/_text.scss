@@ -1,0 +1,28 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.text {
+    @include adaptiveValue('margin-top', 100px, 30px);
+
+    .text__container {
+        max-width: $maxWidthContainer;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        @include adaptiveValue('gap', 50px, 20px);
+        @include adaptiveValue('padding-top', 70px, 30px);
+        @include adaptiveValue('padding-bottom', 70px, 30px);
+        padding-left: 30px;
+        padding-left: 30px;
+        margin: 0 15px;
+        border-radius: 10px;
+        justify-content: center;
+        align-items: center;
+        background-color: #F6FBE9;
+
+        &>p {
+            text-align: center;
+            max-width: 1300px;
+        }
+    }
+}
