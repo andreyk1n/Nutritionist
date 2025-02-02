@@ -15,6 +15,16 @@
             align-items: center;
             padding: 15px 100px;
             gap: 20px;
+            overflow-x: auto;
+
+            .tabs__button {
+                text-wrap: nowrap;
+            }
+
+            @media (max-width: 1300px) {
+                padding: 15px;
+                gap: 20px;
+            }
         }
     }
 }
