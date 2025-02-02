@@ -1,0 +1,20 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.experts {
+    &__container {
+        display: flex;
+        flex-direction: column;
+
+        &>.tabs__buttons {
+            @include adaptiveValue('margin-top', 60px, 30px);
+            background-color: #234338;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 100px;
+            gap: 20px;
+        }
+    }
+}

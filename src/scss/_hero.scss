@@ -119,3 +119,16 @@
 
     }
 }
+
+.hero.team {
+    .hero__container {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        @include adaptiveValue('padding-top', 100px, 50px);
+       
+        >p {
+            text-align: center;
+        }
+    }
+}

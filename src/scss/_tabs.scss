@@ -26,12 +26,13 @@
 
     &--active {
       background-color: #234338;
-      border: 2px solid #234338;  
+      border: 2px solid #234338;
       color: #fff;
+
       &:hover {
         opacity: .5;
       }
-    }   
+    }
 
     &:hover {
       border: 2px solid #234338;
@@ -45,5 +46,19 @@
     &--active {
       display: block;
     }
+  }
+}
+
+.experts {
+  .tabs__button {
+    color: #fff;
+    &:hover {
+      background-color: #2C5446!important;
+      border: 2px solid #356554;
+    }
+  }
+  .tabs__button--active {
+    background-color: #2C5446!important;
+    border: 2px solid #356554;
   }
 }
