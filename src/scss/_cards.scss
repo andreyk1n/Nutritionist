@@ -1,0 +1,69 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.cards {
+    @include adaptiveValue('margin-top', 100px, 30px);
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &>p {
+            text-align: center;
+            max-width: 996px;
+        }
+    }
+
+    &__items {
+        @include adaptiveValue('margin-top', 80px, 50px);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+
+        @media (max-width: 992px) {
+            grid-template-columns: auto;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+
+        &>span {
+            color: #468671;
+            font-size: 150px;
+            font-family: "Urbanist",sans-serif;
+            font-weight: 700;
+
+            @media (max-width: 1200px) {
+                font-size: 110px;
+            }
+        }
+
+        &-content {
+            margin-top: -70px;
+            background-color: #F6FBE9;
+            border-radius: 12px;
+            @include adaptiveValue('padding', 50px, 50px);
+            min-height: 275px;
+
+            @media (max-width: 1200px) {
+                margin-top: -50px;
+            }
+        }
+
+        &-head {
+            color: #262626;
+            font-size: clamp(18px, 3vw, 24px);
+            font-family: "Urbanist",sans-serif;
+            font-weight: 600;
+            line-height: 36px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    }
+}
