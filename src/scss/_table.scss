@@ -1,0 +1,107 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.table {
+    @include adaptiveValue('margin-top', 100px, 30px);
+
+    &__container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        overflow-x: auto;
+
+        table {
+            min-width: 100%;
+            width: 100%;
+            background-color: #F6FBE9;
+            border-radius: 12px;
+            padding: 80px 50px;
+            border-collapse: collapse;
+
+            th,
+            td {
+                border: 1px solid #DCF1A7;
+            }
+
+            thead {
+                th {
+                    color: #fff;
+                    padding: 30px;
+
+                    @media (max-width: 992px) {
+                        padding: 10px;
+                    }
+
+                    span {
+                        background-color: #234338;
+                        border-radius: 8px;
+                        padding: 20px 30px;
+
+                        @media (max-width: 992px) {
+                            padding: 10px 20px;
+                        }
+
+                        display: block;
+                        text-wrap: nowrap;
+                    }
+
+                    &:first-child {
+                        span {
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+
+            tbody {
+                td {
+                    padding: 30px 60px;
+
+                    @media (max-width: 992px) {
+                        padding: 10px;
+                    }
+
+                    span.check {
+                        width: 40px;
+                        height: 40px;
+                        min-width: 40px;
+                        display: block;
+                        margin: 0 auto;
+                        background-size: cover;
+                        background-image: url('data:image/svg+xml,<svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.667969" width="40" height="40" rx="8" fill="%23CBEA7B"/><path fill-rule="evenodd" clip-rule="evenodd" d="M28.715 12.984C29.1103 13.2852 29.1867 13.8499 28.8854 14.2453L19.2854 26.8453C19.128 27.0519 18.8891 27.1804 18.6299 27.1978C18.3708 27.2153 18.1168 27.1199 17.9331 26.9362L12.5331 21.5362C12.1817 21.1848 12.1817 20.6149 12.5331 20.2635C12.8846 19.912 13.4545 19.912 13.8059 20.2635L18.4777 24.9353L27.4536 13.1544C27.7549 12.759 28.3196 12.6827 28.715 12.984Z" fill="%23262626"/></svg>');
+                    }
+
+                    span.cross {
+                        width: 40px;
+                        height: 40px;
+                        min-width: 40px;
+                        display: block;
+                        margin: 0 auto;
+                        background-size: cover;
+                        background-image: url('data:image/svg+xml,<svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.667969" width="40" height="40" rx="8" fill="%23EEF8D3"/><path d="M16.2044 14.2636C15.8529 13.9121 15.283 13.9121 14.9316 14.2636C14.5801 14.6151 14.5801 15.1849 14.9316 15.5364L19.3952 20L14.9316 24.4636C14.5801 24.8151 14.5801 25.3849 14.9316 25.7364C15.283 26.0879 15.8529 26.0879 16.2044 25.7364L20.668 21.2728L25.1316 25.7364C25.483 26.0879 26.0529 26.0879 26.4044 25.7364C26.7558 25.3849 26.7558 24.8151 26.4044 24.4636L21.9408 20L26.4044 15.5364C26.7558 15.1849 26.7558 14.6151 26.4044 14.2636C26.0529 13.9121 25.483 13.9121 25.1316 14.2636L20.668 18.7272L16.2044 14.2636Z" fill="%23262626"/></svg>');
+                    }
+                }
+            }
+        }
+    }
+
+
+    table tr:first-child th {
+        border-top: none;
+    }
+
+    table tr:last-child td {
+        border-bottom: none;
+    }
+
+    table tr td:first-child,
+    table tr th:first-child {
+        border-left: none;
+    }
+
+    table tr td:last-child,
+    table tr th:last-child {
+        border-right: none;
+    }
+}
