@@ -216,6 +216,26 @@
     });
   });
 
+  document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".filters button");
+  const posts = document.querySelectorAll(".filters__item > div");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", function () {
+      buttons.forEach((btn) => btn.classList.remove("filter__button--active"));
+      this.classList.add("filter__button--active");
+      const filterClass = this.classList[0]; 
+      posts.forEach((post) => {
+        if (filterClass === "all" || post.classList.contains(filterClass)) {
+          post.style.display = "block";
+        } else {
+          post.style.display = "none";
+        }
+      });
+    });
+  });
+});
+
 
 </script>
 </body>
