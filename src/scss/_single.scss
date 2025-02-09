@@ -1,0 +1,38 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.single {
+    @include adaptiveValue('margin-top', 200px, 160px);
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        @include adaptiveValue('gap', 60px, 20px);
+
+
+        @media (max-width: 992px) {
+            flex-direction: column;
+        }
+    }
+
+    &__content {
+        font-size: clamp(16px, 2vw, 20px);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        p {
+            // margin-top: 10px;
+            line-height: 150%;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+    }
+
+    .accordion-s__sidebar {
+        @media (max-width: 992px) {
+            min-width: 100%;
+        }
+    }
+}
