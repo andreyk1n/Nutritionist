@@ -76,9 +76,28 @@
         resources that cover a wide range of topics related to nutrition, fitness, and overall well-being.</p>
     </div>
   </section>
+
+  <div class="filters">
+    <button class="all">all</button>
+    <button class="filter1">filter1</button>
+    <button class="filter2">filter2</button>
+    <button class="filter3">filter3</button>
+  </div>
  
+  <div class="filters__item">
+    <div class="other">other</div>
+    <div class="other">other</div>
+    <div class="other">other</div>
+    <div class="other">other</div>
+    <div class="filter1">1</div>
+    <div class="filter2">2</div>
+    <div class="filter3">3</div>
+    <div class="filter3">3</div>
+    <div class="filter3">3</div>
+  </div>
 
 </div>
+
 
 <footer class="footer">
   <div class="footer__container">
@@ -161,6 +180,26 @@
       });
     });
   });
+
+  document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".filters button");
+  const posts = document.querySelectorAll(".filters__item > div");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", function () {
+      buttons.forEach((btn) => btn.classList.remove("filter__button--active"));
+      this.classList.add("filter__button--active");
+      const filterClass = this.classList[0]; 
+      posts.forEach((post) => {
+        if (filterClass === "all" || post.classList.contains(filterClass)) {
+          post.style.display = "block";
+        } else {
+          post.style.display = "none";
+        }
+      });
+    });
+  });
+});
 
 
 </script>
