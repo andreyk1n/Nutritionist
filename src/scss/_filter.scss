@@ -1,3 +1,43 @@
-.filter__button--active {
-    padding: 10px;
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.filter {
+
+    &__head {
+        width: 100%;
+        background-color: #234338;
+        border-bottom-right-radius: 12px;
+        border-bottom-left-radius: 12px;
+        max-width: 1596px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 15px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        overflow: auto;
+
+        button {
+            text-wrap: nowrap;
+            padding: 14px 20px;
+            background-color: #234338;
+            border: 1px solid #234338;
+            border-radius: 12px;
+            color: #fff;
+            transition-duration: $transitionDuration;
+            cursor: pointer;
+
+            &:hover {
+                border: 1px solid #356554;
+                background-color: #2C5446;
+            }
+        }
+
+        .filter__button--active {
+            border: 1px solid #356554;
+            background-color: #2C5446;
+        }
+    }
+
+
 }
