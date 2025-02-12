@@ -1,0 +1,107 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+.contact {
+    @include adaptiveValue('margin-top', 50px, 30px);
+    &__container {
+        border: 1px solid #E5F5BD;
+        background-color: #F6FBE9;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include adaptiveValue('gap', 50px, 20px);
+    }
+
+    &__socials {
+        display: flex;
+        gap: 14px;
+        justify-content: flex-end;
+        margin-top: 30px;
+    }
+
+    &__col {
+        a {
+            background-color: #CBEA7B;
+            width: 64px;
+            height: 64px;
+            min-width: 64px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition-duration: .5s;
+            &:hover {
+                opacity: .5;
+            }
+        }
+    }
+
+    .contact__container {
+        @include adaptiveValue('padding', 80px, 20px);
+        margin: 0 15px;
+    }
+
+    .contact__image {
+        width: 100%;
+        height: auto;
+        max-height: 480px;
+        border-radius: 8px;
+    }
+}
+
+
+.form {
+
+    textarea {
+        min-height: 130px;
+    }
+    &__group {
+      margin-bottom: 1.5rem;
+      width: 100%;
+    }
+
+    &__row {
+        gap: 30px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+  
+    &__label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  
+    &__input {
+      width: 100%;
+      padding: 24px;
+      font-size: 14px;
+      border: 1px solid #DCF1A7;
+      border-radius: 8px;
+      resize: none;
+      background-color: #EEF8D3;
+      &:focus {
+        border-color: #DCF1A7;
+        outline: none;
+      }
+    }
+  
+    &__button {
+      width: 100%;
+      padding: 18px;
+      line-height: 150%;
+      font-size: 18px;
+      font-weight: bold;
+      color: #262626;
+      background-color: #CBEA7B;
+      border: none;
+      border-radius: 4px;
+      transition-duration: .5s;
+      cursor: pointer;
+  
+      &:hover {
+        opacity: .5;
+      }
+    }
+  }
