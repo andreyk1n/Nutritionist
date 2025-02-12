@@ -1,0 +1,35 @@
+.info {
+
+    &__container {
+        background-color: #1A3129;
+        border-bottom-right-radius: 12px;
+        border-bottom-left-radius: 12px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        background-color: #234338;
+        border: 1px solid #2C5446;
+        border-radius: 8px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #fff;
+        gap: 20px;
+        width: 100%;
+        max-width: 325px;
+        a {
+            color: #fff;
+        }
+    }
+
+    .info__container {
+        padding: 30px 15px;
+    }
+}
