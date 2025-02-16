@@ -8,6 +8,10 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         @include adaptiveValue('gap', 50px, 20px);
+
+        @media (max-width: 992px) {
+          grid-template-columns: auto;
+        }
     }
 
     &__socials {
@@ -64,6 +68,11 @@
         justify-content: space-between;
         width: 100%;
         align-items: center;
+
+        @media (max-width: 992px) {
+          flex-direction: column;
+          gap: 0px;
+        }
     }
   
     &__label {
@@ -76,7 +85,7 @@
     &__input {
       width: 100%;
       padding: 24px;
-      font-size: 14px;
+      font-size: 16px;
       border: 1px solid #DCF1A7;
       border-radius: 8px;
       resize: none;
@@ -84,6 +93,10 @@
       &:focus {
         border-color: #DCF1A7;
         outline: none;
+      }
+
+      @media (max-width: 768px) {
+        padding: 14px;
       }
     }
   
